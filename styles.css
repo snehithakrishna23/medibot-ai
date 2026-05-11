@@ -1,0 +1,484 @@
+
+
+           
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap');
+ 
+
+/* ── Global Font ── */
+html, body, [class*="css"], .stApp, .stMarkdown, p, div, span, label, button {
+    font-family: 'Sora', sans-serif !important;
+}
+
+/* ── Prevent Icon Text Overlap (Restores Material Icons) ── */
+span[class*="material-symbols"], 
+span.material-symbols-rounded, 
+.material-icons,
+span[data-testid="stIconMaterial"],
+.st-icon,
+svg text,
+button svg text,
+summary svg text,
+[data-testid="stExpander"] summary svg text,
+[data-testid="stExpander"] summary span[data-testid="stIconMaterial"],
+[data-testid="stFileUploader"] span,
+[data-testid="collapsedControl"] svg text {
+    font-family: 'Material Symbols Rounded', 'Material Icons', sans-serif !important;
+}
+
+/* ── App Background ── */
+.stApp {
+    background:
+        radial-gradient(ellipse at 10% 0%, rgba(29,78,216,0.10) 0%, transparent 40%),
+        radial-gradient(ellipse at 90% 100%, rgba(79,70,229,0.08) 0%, transparent 40%),
+        #040d1a;
+}
+
+/* ── Hide Streamlit default elements ── */
+#MainMenu { visibility: hidden; }
+footer { visibility: hidden; }
+header { background: transparent !important; } /* Makes header invisible but keeps buttons clickable */
+.stApp > header button[title="View fullscreen"] { display: none; } /* Optional: hides fullscreen button */
+
+/* ── Sidebar Width ── */
+section[data-testid="stSidebar"] {
+    width: 300px !important;
+}
+
+/* ── Sidebar Background ── */
+[data-testid="stSidebar"] {
+    background-color: #070f1f !important;
+    border-right: 1px solid rgba(96,165,250,0.08) !important;
+}
+
+/* ── Sidebar Title ── */
+[data-testid="stSidebar"] h1 {
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    color: #e2e8f0 !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ── Sidebar Markdown ── */
+[data-testid="stSidebar"] .stMarkdown p {
+    color: #94a3b8 !important;
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+}
+[data-testid="stSidebar"] .stMarkdown h2 {
+    font-size: 10px !important;
+    letter-spacing: 0.12em !important;
+    color: #334155 !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+    margin-bottom: 4px !important;
+}
+[data-testid="stSidebar"] .stMarkdown li {
+    color: #64748b !important;
+    font-size: 13px !important;
+    margin-bottom: 6px !important;
+    list-style: none !important;
+    padding-left: 0 !important;
+}
+[data-testid="stSidebar"] .stMarkdown ul {
+    padding-left: 0 !important;
+}
+
+/* ── Info Box ── */
+[data-testid="stSidebar"] .stAlert {
+    background: #11284d !important;
+    border: none !important;
+    border-radius: 10px !important;
+}
+[data-testid="stSidebar"] .stAlert p {
+    color: #60a5fa !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+}
+            
+
+            
+/* ── File Uploader ── */
+[data-testid="stFileUploader"] {
+    background: #0f172a !important;
+    border: 1px dashed rgba(96,165,250,0.3) !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+}
+[data-testid="stFileUploader"] label {
+    color: #cbd5e1 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+[data-testid="stFileUploader"] section > button {
+    background: #1e293b !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 8px !important;
+    color: #e2e8f0 !important;
+    padding: 6px 14px !important;
+}
+            
+/* ── Bulletproof File Limit Text Fix ── */
+[data-testid="stFileUploader"] section div,
+[data-testid="stFileUploader"] section small,
+[data-testid="stFileUploader"] section span,
+[data-testid="stFileUploaderDropzone"] * {
+    font-size: 12px !important;
+    font-family: 'Sora', sans-serif !important;
+    letter-spacing: 0px !important;
+    text-transform: none !important;
+    line-height: normal !important;
+    color: #64748b !important;
+    font-weight: 400 !important;
+}
+
+/* Ensure the text inside the actual "Upload" button stays clean */
+[data-testid="stFileUploader"] section button,
+[data-testid="stFileUploader"] section button * {
+    font-size: 14px !important;
+    letter-spacing: 0px !important;
+    text-transform: none !important;
+    color: #e2e8f0 !important;
+}
+/* ── Fix Duplicate "Upload" Text (Restore Icon) ── */
+[data-testid="stFileUploader"] section button svg text,
+[data-testid="stFileUploader"] section button span[class*="material"],
+[data-testid="stFileUploader"] section button span[data-testid="stIconMaterial"] {
+    font-family: 'Material Symbols Rounded', 'Material Icons', sans-serif !important;
+    font-size: 18px !important;
+    letter-spacing: normal !important;
+    text-transform: none !important;
+}          
+/* ── Main Area ── */
+.main .block-container {
+    padding-top: 2rem !important;
+    padding-bottom: 6rem !important;
+    max-width: 860px !important;
+}
+
+/* ── Main Header ── */
+.main-tag {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: #334155;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.main-title {
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #e2e8f0 0%, #93c5fd 50%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+.subtitle {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+/* ── Voice Button ── */
+[data-testid="stButton"] button {
+    background: rgba(255,255,255,0.04) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 8px !important;
+    color: #94a3b8 !important;
+    font-size: 13px !important;
+    padding: 6px 14px !important;
+    transition: all 0.2s !important;
+}
+[data-testid="stButton"] button:hover {
+    background: rgba(96,165,250,0.10) !important;
+    border-color: rgba(96,165,250,0.30) !important;
+    color: #60a5fa !important;
+}
+
+/* ── Chat Messages ── */
+.stChatMessage {
+    background-color: rgba(255,255,255,0.03) !important;
+    border-radius: 14px !important;
+    padding: 14px 18px !important;
+    margin-bottom: 10px !important;
+    border: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* User message bubble */
+[data-testid="stChatMessage"][data-testid*="user"] {
+    background: rgba(29,78,216,0.20) !important;
+    border: 1px solid rgba(59,130,246,0.18) !important;
+}
+
+/* ── Chat Message Text ── */
+.stChatMessage p {
+    color: #cbd5e1 !important;
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+}
+
+/* ── Expander (Sources) ── */
+.stExpander {
+    background: rgba(255,255,255,0.02) !important;
+    border: 1px solid rgba(255,255,255,0.06) !important;
+    border-radius: 10px !important;
+}
+.stExpander summary {
+    color: #60a5fa !important;
+    font-size: 13px !important;
+}
+
+/* ── Spinner ── */
+.stSpinner > div {
+    border-top-color: #3b82f6 !important;
+}
+
+/* ── Success/Error ── */
+.stSuccess {
+    background: rgba(16,185,129,0.08) !important;
+    border: 1px solid rgba(16,185,129,0.18) !important;
+    border-radius: 8px !important;
+    color: #6ee7b7 !important;
+    font-size: 13px !important;
+}
+.stError {
+    background: rgba(239,68,68,0.08) !important;
+    border: 1px solid rgba(239,68,68,0.18) !important;
+    border-radius: 8px !important;
+    color: #fca5a5 !important;
+    font-size: 13px !important;
+}
+
+/* ── Caption ── */
+.stCaption {
+    color: #1e293b !important;
+    font-size: 11px !important;
+    text-align: center !important;
+}
+
+/* ════════════════════════════════════
+   CHAT INPUT — The important part
+   ════════════════════════════════════ */
+
+/* Wrapper */
+[data-testid="stChatInput"] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* The floating container */
+.stChatInputContainer {
+    background: rgba(7, 15, 31, 0.92) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(96, 165, 250, 0.20) !important;
+    border-radius: 14px !important;
+    padding: 10px 14px !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.45) !important;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+/* Glow on focus */
+.stChatInputContainer:focus-within {
+    border-color: rgba(96, 165, 250, 0.45) !important;
+    box-shadow:
+        0 0 0 2px rgba(96,165,250,0.08),
+        0 8px 32px rgba(0,0,0,0.45) !important;
+}
+
+/* ── Kill ALL red borders / outlines ── */
+.stChatInputContainer *,
+.stChatInputContainer *:focus,
+.stChatInputContainer *:focus-visible,
+.stChatInputContainer *:focus-within,
+.stChatInputContainer div,
+.stChatInputContainer div:focus,
+.stChatInputContainer textarea,
+.stChatInputContainer textarea:focus,
+.stChatInputContainer textarea:focus-visible,
+[data-testid="stChatInput"] *,
+[data-testid="stChatInput"] *:focus,
+[data-testid="stChatInput"] *:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-color: transparent !important;
+}
+
+/* Textarea */
+.stChatInputContainer textarea {
+    background: transparent !important;
+    color: #e2e8f0 !important;
+    font-size: 14px !important;
+    font-family: 'Sora', sans-serif !important;
+    caret-color: #60a5fa !important;
+}
+
+/* Placeholder */
+.stChatInputContainer textarea::placeholder {
+    color: rgba(100, 116, 139, 0.7) !important;
+    font-size: 14px !important;
+    font-family: 'Sora', sans-serif !important;
+}
+
+/* Send button */
+.stChatInputContainer button {
+    background: linear-gradient(135deg, #1d4ed8, #4f46e5) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    color: white !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transition: opacity 0.2s !important;
+}
+.stChatInputContainer button:hover {
+    opacity: 0.85 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.stChatInputContainer button:focus,
+.stChatInputContainer button:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+/* Source Document Expander */
+.streamlit-expanderHeader {
+
+    font-size: 18px !important;
+
+    color: #60A5FA !important;
+
+    font-weight: 600 !important;
+}
+
+/* Expander Container */
+[data-testid="stExpander"] {
+
+    background: rgba(255,255,255,0.02);
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+/* Source Text */
+[data-testid="stExpander"] p {
+
+    font-size: 16px !important;
+
+    line-height: 1.6 !important;
+
+    color: rgba(255,255,255,0.85) !important;
+}
+
+/* Source Heading */
+[data-testid="stExpander"] h3 {
+
+    font-size: 22px !important;
+
+    margin-bottom: 15px !important;
+}
+
+
+
+ 
+/* ── Voice Input Box Fix (Remove Iframe Borders) ── */
+iframe[title*="mic_recorder"], 
+iframe[title*="streamlit_mic_recorder"] {
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    color-scheme: dark !important;
+}
+
+/* Removes the wrapper formatting around the iframe */
+div[data-testid="stVerticalBlock"] > div:has(iframe[title*="mic_recorder"]) {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+/* Redu    left: 50% !important;
+    transform: translateX(-50%) !important; 
+    z-index: 9999 !important;
+    
+    background: rgba(7, 15, 31, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(96, 165, 250, 0.3) !important;
+    border-radius: 30px !important;
+    padding: 0px 8px !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+    width: max-content !important; 
+}
+
+iframe[title*="mic_recorder"], 
+iframe[title*="streamlit_mic_recorder"] {
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    color-scheme: dark !important;
+}
+
+ce Hero Spacing */
+.block-container {
+    padding-top: 2rem !important;
+}
+
+/* Mic Recorder Button */
+button[title="Start recording"],
+button[title="Stop recording"] {
+
+    background: linear-gradient(
+        135deg,
+        #2563EB,
+        #7C3AED
+    ) !important;
+
+    width: 60px !important;
+    height: 60px !important;
+
+    border-radius: 18px !important;
+
+    border: none !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    box-shadow: 0 0 20px rgba(124,58,237,0.35);
+}
+
+/* Mic Icon */
+button[title="Start recording"] p,
+button[title="Stop recording"] p {
+
+    color: white !important;
+
+    font-size: 28px !important;
+
+    margin: 0 !important;
+}
+/* Chat Hover Animation */
+.stChatMessage:hover {
+    transform: translateY(-2px);
+    transition: 0.3s ease;
+}
+
+/* Hide Streamlit Header */
+header {
+    visibility: hidden;
+}
+

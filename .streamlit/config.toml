@@ -1,0 +1,8 @@
+[theme]
+# This changes the default red to a nice vibrant blue for both buttons!
+primaryColor = "#3b82f6"
+
+# This ensures the rest of Streamlit's hidden defaults match your dark theme
+backgroundColor = "#040d1a"
+secondaryBackgroundColor = "#070f1f"
+textColor = "#e2e8f0"
